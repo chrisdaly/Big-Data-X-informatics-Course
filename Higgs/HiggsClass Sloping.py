@@ -25,13 +25,13 @@ plt.title("Sloping Background from 42000 events", backgroundcolor = "white")
 
 # Gaussian Higgs signal
 ###############################
-# signal centered at 126GeV with width of 2
+# higgs signal centered at 126GeV with width of 2
 gauss = 2 * np.random.randn(300) + 126
 
 # signal centerd at 126GeV with width of 0.5
 narrowGauss = 0.5 * np.random.randn(300) + 126
 
-# plot Higgs
+# plot Higgs with 15 bins
 plt.figure("HiggsAlone")
 plt.hist(gauss, bins = 15, range = (110,140))
 plt.title("2Gev Higgs in 2 GeV bins on its own", backgroundcolor = "white")
@@ -74,7 +74,7 @@ plt.title("30000 Narrow and Wide Higgs in 0.5 GeV bins", backgroundcolor = "whit
 ###############################
 plt.figure("Total Wide Higgs Bin 2 GeV with errors")
 
-# extracting values and bin edges from the histogram data
+# extracting the number of events per bin and bin edges from the histogram data
 values, binedges, junk = plt.hist(total, bins = 15, range = (110, 140), alpha = 0.5, color = "blue")  
 
 # computing bin centers as average if its 2 bin-edges
@@ -89,11 +89,4 @@ plt.hist(gauss, bins = 15, range = (110, 140), alpha = 0.5, color = "red")
 plt.errorbar(centers, values, yerr = errors, ls = 'None', marker ='x', color = 'black', markersize = 6.0 ) 
 plt.title("2 Gev Higgs in 2 GeV bins with Sloping Background + Errors", backgroundcolor = "white")
 
-
-
 plt.show()
-
-
-
-
-# change Base to lowercase
