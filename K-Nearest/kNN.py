@@ -45,16 +45,16 @@ def classify0(inX, dataSet, labels, k):
 	for i in range(k):	
 
 		# label of this neighbor
-        voteIlabel = labels[sortedDistIndicies[i]]	
+		voteIlabel = labels[sortedDistIndicies[i]]	
 
-        # get gets current count for voteIlabel and returns zero if first time voteIlabel seen (default = 0)
-        classCount[voteIlabel] = classCount.get(voteIlabel, 0) + 1	
+		# get gets current count for voteIlabel and returns zero if first time voteIlabel seen (default = 0)
+		classCount[voteIlabel] = classCount.get(voteIlabel, 0) + 1	
 
     # sort classCount (highest to lowest) by voteIlabel count
     sortedClassCount = sorted(classCount.iteritems(), key = operator.itemgetter(1), reverse = True)	
     
     # the label that occurs most often in k nearest neighbors
-    return sortedClassCount[0][0]	
+	return sortedClassCount[0][0]	
 
 
 # Reads rating data and returns a matrix of 1000 rows of 3 Vectors, and an array of numeric labels
